@@ -15,11 +15,11 @@ function setupWhatsAppQuoteForm() {
 
         const formData = new FormData(form);
         const name = String(formData.get('name') || '').trim();
-        const email = String(formData.get('email') || '').trim();
+        const contact = String(formData.get('contact') || '').trim();
         const category = String(formData.get('category') || '').trim();
         const message = String(formData.get('message') || '').trim();
 
-        if (!name || !email || !category || !message) {
+        if (!name || !contact || !category || !message) {
             status.textContent = 'Please fill all fields before sending.';
             return;
         }
@@ -29,7 +29,7 @@ function setupWhatsAppQuoteForm() {
             '',
             'I want a free quote.',
             `Name: ${name}`,
-            `Email: ${email}`,
+            `Contact No: ${contact}`,
             `Category: ${category}`,
             `Message: ${message}`
         ].join('\n');
